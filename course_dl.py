@@ -38,10 +38,7 @@ sleep(10)
 
 # driver.refresh()
 def get_video_url(driver):
-
     return driver.find_element_by_xpath('//video').get_attribute('src')
-
-
 
 def download_video(url):
     r = requests.get(url, allow_redirects=True)
@@ -71,7 +68,7 @@ print("====================")
 li = []
 for url in lesson_urls:
     url = url.get_attribute("href")
-    if course_url in url:
+    if course_url in url and "quiz" not in url:
         li.append(url)
         #print(url)
 
@@ -91,12 +88,9 @@ for i, url in enumerate(li):
     video_url = get_video_url(driver)
     video_urls.append(video_url)
     print(video_url)
-
-    DownloadFile(video_url, i)
-
+    #DownloadFile(video_url, i)
     print("VIDEO URLS: ")
     print(video_urls)
     print("Trying to loop")
-
 
 
