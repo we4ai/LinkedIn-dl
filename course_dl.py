@@ -38,6 +38,7 @@ sleep(10)
 
 # driver.refresh()
 def get_video_url(driver):
+
     return driver.find_element_by_xpath('//video').get_attribute('src')
 
 
