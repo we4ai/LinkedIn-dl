@@ -37,28 +37,12 @@ try:
     linkedin_url, course_url = get_course_url(course_url)
     # def click_next_video(url):
 
-<<<<<<< HEAD
     sleep(10)
 
     # driver.refresh()
     def get_video_url(driver):
 
         return driver.find_element_by_xpath('//video').get_attribute('src')
-
-
-=======
-linkedin_url, course_url = get_course_url(course_url)
-# def click_next_video(url):
-
-sleep(10)
-
-# driver.refresh()
-def get_video_url(driver):
-    return driver.find_element_by_xpath('//video').get_attribute('src')
-
-def download_video(url):
-    r = requests.get(url, allow_redirects=True)
->>>>>>> effefc7b7d809b3583e98cd4f413a02c02f88818
 
     def download_video(url):
         r = requests.get(url, allow_redirects=True)
@@ -81,18 +65,8 @@ def download_video(url):
     lesson_urls = driver.find_elements_by_xpath("//li/a")
     print("====================")
 
-
-<<<<<<< HEAD
     #print(lesson_urls)
     print("====================")
-=======
-li = []
-for url in lesson_urls:
-    url = url.get_attribute("href")
-    if course_url in url and "quiz" not in url:
-        li.append(url)
-        #print(url)
->>>>>>> effefc7b7d809b3583e98cd4f413a02c02f88818
 
     li = []
     for url in lesson_urls:
@@ -104,7 +78,6 @@ for url in lesson_urls:
 
     # print(li)
 
-<<<<<<< HEAD
     video_urls = []
     import os
     if not os.path.exists(course_url):
@@ -120,29 +93,14 @@ for url in lesson_urls:
         print(video_url)
 
         DownloadFile(video_url, i)
-=======
-for i, url in enumerate(li):
-    print("Figuring out this url ===> ")
-    print(url)
-    driver.get(url)
-    sleep(10)
-    video_url = get_video_url(driver)
-    video_urls.append(video_url)
-    print(video_url)
-    #DownloadFile(video_url, i)
-    print("VIDEO URLS: ")
-    print(video_urls)
-    print("Trying to loop")
->>>>>>> effefc7b7d809b3583e98cd4f413a02c02f88818
+
 
         print("VIDEO URLS: ")
         print(video_urls)
         print("Trying to loop")
 
-<<<<<<< HEAD
+
 
 except Exception as e:
     print(e)
 # exec /usr/bin/google-chrome -remote-debugging-port=9014 --user-data-dir="/home/kanika/projects/linkedincopyvideos/LinkedIn-dl/chrome_debug"`
-=======
->>>>>>> effefc7b7d809b3583e98cd4f413a02c02f88818
